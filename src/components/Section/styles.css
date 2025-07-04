@@ -1,0 +1,25 @@
+.section{
+    border: 1.5px groove #ccc;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: move;
+    background: linear-gradient(145deg, #f9f9f9, #eaeaea);
+
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+.section:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+  }
+
+.sectionLabel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}  
+.sectionBody{
+    margin-top: 10px;
+    padding: 10px;
+}  
