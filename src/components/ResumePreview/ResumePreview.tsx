@@ -64,7 +64,6 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
                   <img
                     src={(section.data as ContactsData).photo}
                     alt="Фото пользователя"
-                    style={{ width: 100, height: 100, borderRadius: "15%", marginBottom: 8 }}
                   />
                 )}
                 <div><strong>Имя:</strong> {(section.data as ContactsData).firstName}</div>

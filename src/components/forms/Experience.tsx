@@ -2,6 +2,7 @@ import React from "react";
 import { ExperienceData, TimePeriod, ExperienceEntry } from "../../types/resume";
 import DeleteButton from "../buttons/DeleteButton/DeleteButton";
 import AddButton from "../buttons/AddButton/AddButton";
+import './styles.css';
 
 interface ExperienceProps {
   data: ExperienceData;
@@ -54,17 +55,13 @@ const Experience: React.FC<ExperienceProps> = ({ data, onChange }) => {
       {data.entries.map((entry, index) => (
         <div
           key={index}
-          style={{
-            marginBottom: 16,
-            padding: 10,
-          }}
+          className='divPad'
         >
           <input
             type="text"
             placeholder="Должность"
             value={entry.position}
             onChange={(e) => handleFieldChange(index, "position", e.target.value)}
-            style={{ width: "100%", marginBottom: 8 }}
           />
 
           <input
@@ -72,10 +69,9 @@ const Experience: React.FC<ExperienceProps> = ({ data, onChange }) => {
             placeholder="Компания"
             value={entry.company}
             onChange={(e) => handleFieldChange(index, "company", e.target.value)}
-            style={{ width: "100%", marginBottom: 8 }}
           />
 
-          <div style={{ display: "flex", gap: 10, marginBottom: 8 }}>
+          <div className='divFlex'>
             <div>
               <label>Начало: </label>
               <input
@@ -98,7 +94,6 @@ const Experience: React.FC<ExperienceProps> = ({ data, onChange }) => {
             placeholder="Описание"
             value={entry.description}
             onChange={(e) => handleFieldChange(index, "description", e.target.value)}
-            style={{ width: "100%", height: 100,  resize: "none" }}
           />
 
           {data.entries.length > 1 && (

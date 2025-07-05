@@ -1,7 +1,7 @@
-import React from "react";
 import { SkillsData } from "../../types/resume";
 import DeleteButton from "../buttons/DeleteButton/DeleteButton";
 import AddButton from "../buttons/AddButton/AddButton";
+import './styles.css';
 
 interface SkillsProps {
   data: SkillsData;
@@ -28,13 +28,15 @@ const Skills: React.FC<SkillsProps> = ({ data, onChange }) => {
   return (
     <div >
       {data.skills.map((skill, i) => (
-        <div key={i} style={{ display: "flex", gap: 8, marginBottom: 8 }}>
+        <div 
+        className='divFlex'
+        key={i}
+        >
           <input
             type="text"
             value={skill}
             onChange={(e) => handleSkillChange(i, e.target.value)}
             placeholder={`Навык #${i + 1}`}
-            style={{ flexGrow: 1 }}
           />
           <DeleteButton onClick={() => handleRemoveSkill(i)} />
         </div>

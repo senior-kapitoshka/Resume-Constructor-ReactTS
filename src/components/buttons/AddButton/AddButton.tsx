@@ -2,9 +2,8 @@ import './styles.css'
 
 interface AddButtonProps {
   onClick: () => void;
-  title?: string;      // для tooltip при наведении
-  disabled?: boolean;
-  size?: number;       // размер кружка
+  title?: string;     
+  disabled?: boolean;      
 }
 
 const AddButton: React.FC<AddButtonProps> = ({

@@ -1,5 +1,5 @@
-import React from "react";
 import { AboutData } from "../../types/resume";
+import './styles.css';
 
 interface AboutProps {
   data: AboutData;
@@ -9,8 +9,7 @@ interface AboutProps {
 const About: React.FC<AboutProps> = ({ data, onChange }) => {
   return (
     <div >
-      <textarea
-        style={{ width: "100%", height: 120, resize: "none" }}
+      <textarea 
         value={data.about}
         onChange={(e) => onChange("about", e.target.value)}
         placeholder="Расскажите о себе..."

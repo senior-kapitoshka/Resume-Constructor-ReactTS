@@ -1,4 +1,3 @@
-import React from 'react';
 import { ContactsData,SectionItem, sectionTypes, AboutData, ExperienceData, EducationData, SkillsData, CertificatesData } from '../../types/resume';
 
 import About from '../forms/About';
@@ -78,7 +77,7 @@ const Section: React.FC<SectionProps> = ({
           />
         );
       default:
-        return <div>Неизвестный тип секции</div>;
+        return <div>---</div>;
     }
   };
 

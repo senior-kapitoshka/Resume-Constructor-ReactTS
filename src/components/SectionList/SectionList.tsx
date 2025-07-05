@@ -1,4 +1,3 @@
-import React from 'react';
 import Section from '../Section/Section';
 import { SectionItem } from '../../types/resume';
 import './styles.css';
@@ -23,7 +22,7 @@ const SectionList: React.FC<SectionListProps> = ({
   dragged
 }) => {
   return (
-    <div className='list' style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+    <div className='list'>
       {sections.map((section, i) => (
         <Section
           key={section.id}

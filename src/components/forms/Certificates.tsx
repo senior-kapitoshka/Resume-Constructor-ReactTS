@@ -1,7 +1,7 @@
-import React from "react";
 import { CertificatesData } from "../../types/resume";
 import DeleteButton from '../buttons/DeleteButton/DeleteButton';
 import AddButton from "../buttons/AddButton/AddButton";
+import './styles.css';
 
 interface CertificatesProps {
   data: CertificatesData;
@@ -27,13 +27,14 @@ const Certificates: React.FC<CertificatesProps> = ({ data, onChange }) => {
   return (
     <div>
       {data.descriptions.map((desc, i) => (
-        <div key={i} style={{ display: "flex", gap: 8, marginBottom: 8 }}>
+        <div key={i}
+        className='divFlex' 
+        >
           <input
             type="text"
             value={desc}
             onChange={(e) => handleDescriptionChange(i, e.target.value)}
             placeholder={`Описание сертификата #${i + 1}`}
-            style={{ flexGrow: 1 }}
           />
           <DeleteButton onClick={() => handleRemoveDescription(i)} />
           

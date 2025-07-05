@@ -1,7 +1,7 @@
-import React from "react";
 import { EducationData, TimePeriod, EducationEntry } from "../../types/resume";
 import DeleteButton from "../buttons/DeleteButton/DeleteButton";
 import AddButton from "../buttons/AddButton/AddButton";
+import './styles.css';
 
 interface EducationProps {
   data: EducationData;
@@ -53,32 +53,27 @@ const Education: React.FC<EducationProps> = ({ data, onChange }) => {
       {data.entries.map((entry, index) => (
         <div
           key={index}
-          style={{
-            marginBottom: 16,
-            padding: 10,
-          }}
+          className='divPad'
         >
-          <div style={{ marginBottom: 8 }}>
+          <div className='divFlex'>
             <input
               type="text"
               placeholder="Университет"
               value={entry.university}
               onChange={(e) => handleFieldChange(index, "university", e.target.value)}
-              style={{ width: "100%" }}
             />
           </div>
 
-          <div style={{ marginBottom: 8 }}>
+          <div className='divFlex'>
             <input
               type="text"
               placeholder="Специальность"
               value={entry.discipline}
               onChange={(e) => handleFieldChange(index, "discipline", e.target.value)}
-              style={{ width: "100%" }}
             />
           </div>
 
-          <div style={{ display: "flex", gap: 10 }}>
+          <div className='divFlex'>
             <div>
               <label>Начало: </label>
               <input

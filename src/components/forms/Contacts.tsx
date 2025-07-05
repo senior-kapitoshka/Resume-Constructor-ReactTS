@@ -1,5 +1,5 @@
-import React from 'react';
 import { ContactsData } from "../../types/resume";
+import './styles.css';
 
 interface ContactsProps {
   data: ContactsData;
@@ -21,13 +21,11 @@ const Contacts: React.FC<ContactsProps> = ({ data, onChange }) => {
   };
   return (
     <div>
-      {/* Превью фото */}
       {data.photo && (
-        <div style={{ marginBottom: 16 }}>
+        <div className='divFlex'>
           <img
             src={data.photo}
-            alt="Фото пользователя"
-            style={{ maxWidth: 150, maxHeight: 150, borderRadius: "15%" }}
+            alt="Фото"
           />
         </div>
       )}
@@ -36,7 +34,6 @@ const Contacts: React.FC<ContactsProps> = ({ data, onChange }) => {
         type="file"
         accept="image/*"
         onChange={handlePhotoChange}
-        style={{ marginBottom: 16 }}
       />
 
       <input
@@ -44,14 +41,12 @@ const Contacts: React.FC<ContactsProps> = ({ data, onChange }) => {
         placeholder="Имя"
         value={data.firstName}
         onChange={(e) => onChange("firstName", e.target.value)}
-        style={{ width: "100%", marginBottom: 8 }}
       />
       <input
         type="text"
         placeholder="Фамилия"
         value={data.lastName}
         onChange={(e) => onChange("lastName", e.target.value)}
-        style={{ width: "100%", marginBottom: 8 }}
       />
       <input
         type="number"
@@ -60,7 +55,6 @@ const Contacts: React.FC<ContactsProps> = ({ data, onChange }) => {
         onChange={(e) =>
           onChange("age", e.target.value ? Number(e.target.value) : null)
         }
-        style={{ width: "100%", marginBottom: 8 }}
         min={0}
       />
       <input
@@ -68,14 +62,12 @@ const Contacts: React.FC<ContactsProps> = ({ data, onChange }) => {
         placeholder="Телефон"
         value={data.phone}
         onChange={(e) => onChange("phone", e.target.value)}
-        style={{ width: "100%", marginBottom: 8 }}
       />
       <input
         type="email"
         placeholder="Email"
         value={data.email}
         onChange={(e) => onChange("email", e.target.value)}
-        style={{ width: "100%", marginBottom: 8 }}
       />
     </div>
   );

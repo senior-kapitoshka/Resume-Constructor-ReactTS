@@ -61,7 +61,7 @@ export const sectionTypes = [
   { value: 'education', label: 'Образование' },
   { value: 'experience', label: 'Опыт работы' },
   { value: 'certificates', label: 'Сертификаты' },
-    { value: 'skills', label: 'Навыки' },
-    { value: 'about', label: 'О себе' },
-  ];
+  { value: 'skills', label: 'Навыки' },
+  { value: 'about', label: 'О себе' },
+];
   

@@ -19,7 +19,7 @@ type SectionData =
   | EducationData
   | SkillsData
   | CertificatesData
-  |ContactsData;
+  | ContactsData;
 
 const getEmptySection = (type: SectionType): SectionData => {
   switch (type) {

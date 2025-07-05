@@ -28,12 +28,10 @@ export const loadFromLocalStorage = (): SectionItem[] | null => {
     const parsed: SectionItem[] = JSON.parse(data);
 
     return parsed.map(section => {
-      // Если у секции есть entries с периодами (например, education, experience)
       if (
         (section.type === "education" || section.type === "experience") &&
         Array.isArray((section.data as any).entries)
       ) {
-        // Восстанавливаем даты в записях
         const entries = reviveEntries((section.data as any).entries);
 
         return {
@@ -41,11 +39,10 @@ export const loadFromLocalStorage = (): SectionItem[] | null => {
           data: {
             ...section.data,
             entries,
-          } as EducationData | ExperienceData, // правильно указываем тип
+          } as EducationData | ExperienceData
         };
       }
-
-      // Если у секции один period (не массив), тоже восстанавливаем
+      
       if (
         section.data &&
         (section.data as any).period &&
